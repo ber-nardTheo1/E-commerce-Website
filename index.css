@@ -189,12 +189,13 @@ footer{
 }
 .category-el{
     margin-bottom: 10%;
+    grid-column: span 4;
 }
 
 
 .footer-link{
     padding-top: 3px;
-    padding-left: 2px;
+    margin-right: 33px;
 }
 
 .web-content{
@@ -204,6 +205,35 @@ footer{
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+.contact-container{
+    display: flex;
+    margin-top: 10px;
+    padding-left: 10px;
+    align-content: center;
+}
+
+.instagram-el{
+    padding: 5px;
+    text-align: center;
+    margin-left:5px;
+}
+
+.facebook-el{
+    padding: 5px;
+    text-align: center;
+    margin-left:5px;
+}
+
+.email-el{
+    padding: 5px;
+    text-align: center;
+    margin-left:5px;
+}
+
+
+
+
 
 
 
