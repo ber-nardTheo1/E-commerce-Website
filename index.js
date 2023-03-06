@@ -41,6 +41,12 @@ img[8].src="images/clothing-brand.png"
 
 
 
+
+const Privacy = ` <p> Copyright © ${new Date().getFullYear()} Bernard Malunga </p>`
+document.getElementById("copyrights-el").innerHTML = Privacy
+
+
+
 //let Student1 = new Student("Bernard Malunga", 24, "Nagoya University", "Malawi")
 //let Student2 = new Student("Benson Malunga", 24, "Kwansei Gakuin University", "Sierra Leone")
 //NameEl.innerText = "Name:" +" " + Student1.name
