@@ -246,24 +246,9 @@ footer{
 
 }
 
-.collection img{
-    width: 200px;
-    margin-top: 10px;
-    border: 2px solid white;
-    border-radius: 30px 30px;
-    object-fit: cover;
-}
 
-.collection{
-    position: relative;
-}
 
-.collection-container{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-}
+
 
 
 
