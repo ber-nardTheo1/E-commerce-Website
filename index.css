@@ -213,21 +213,28 @@ footer{
     padding-left: 10px;
     align-items: center;
     justify-content: center;
+    
 }
 
 .instagram-el{
     padding: 5px;
     margin-left:5px;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
 }
 
 .facebook-el{
     padding: 5px;
     margin-left:5px;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
 }
 
 .email-el{
     padding: 5px;
     margin-left:5px;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
 }
 
 .privacy{
@@ -235,7 +242,27 @@ footer{
     margin-bottom:10px;
     justify-content: center;
     text-align: center;
+    font-style: italic;
 
+}
+
+.collection img{
+    width: 200px;
+    margin-top: 10px;
+    border: 2px solid white;
+    border-radius: 30px 30px;
+    object-fit: cover;
+}
+
+.collection{
+    position: relative;
+}
+
+.collection-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
 

@@ -1,18 +1,7 @@
-const Home = document.getElementById("home-el")
-const Men = document.getElementById("men-el")
-const Women = document.getElementById("women-el")
-const Kids = document.getElementById("kids-el")
-const Accessories = document.getElementById("accessories-el")
-const Introduction = document.getElementById("introduction-el")
 
 
 
-Home.innerText = "Home"
-Men.innerText = "Men"
-Women.innerText ="Women"
-Kids.innerText = "Kids"
-Accessories.innerText= "Accessories"
-Introduction.innerText = "Enjoy shopping with us"
+
 
 function Student(name, age, university, country){
     this.name = name
