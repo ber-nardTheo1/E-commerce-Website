@@ -19,9 +19,13 @@ const CreateNav = () =>{
             <div class="cart-user">
                 <a id="cart" class="cart-btn" href="">Cart</a>
                 <a id="login" class="login-btn" href="">Login</a>
+                <a id="signin" class="login-btn" href="">Register</a>
 
             </div>
         </div>`
 }
 
 CreateNav()
+
+const Privacy = ` <p> Copyright © ${new Date().getFullYear()} Bernard Malunga </p>`
+document.getElementById("copyrights-el").innerHTML = Privacy

@@ -79,15 +79,23 @@ a{
 
 .cart-user{
     display: flex;
-    padding-left: 50px;
+    padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 15px;
 }
 
 .login-btn{
-    padding-left: 8px;
+    padding-left: 5px;
 }
 
+
+.headline-products{
+    margin-left: 23px;
+    font-style: oblique;
+    font-size: medium;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
 
 
 .product-container{
