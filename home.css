@@ -57,7 +57,7 @@ a{
 .search-bar{
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left:90%;
+    margin-left: 30%;
     right: 10px;
     display: flex;
 }
@@ -98,10 +98,10 @@ a{
 }
 
 
+
 .product-container{
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+  
     padding-left: 8px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -125,6 +125,42 @@ a{
 
 .actual-price{
     padding-left: 5px;
+}
+
+.pre-btn, .nxt-btn{
+    border: none;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+    margin-top: -50px;
+   
+ 
+}
+
+.pre-btn{
+    left: 0;
+    transform: rotate(180deg);
+    padding-right: 5px;
+}
+
+.nxt-btn{
+    right: 0;
+    margin-left: 10px;
+}
+
+.pre-btn i, .nxt-btn i{
+    opacity: 0.2;
+}
+
+.pre-btn:hover img, .nxt-btn:hover img{
+    opacity: 1;
 }
 
 .name-el{

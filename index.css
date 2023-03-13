@@ -57,7 +57,7 @@ a{
 .search-bar{
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left:90%;
+    margin-left:30%;
     right: 10px;
     display: flex;
 }
@@ -138,6 +138,8 @@ a{
  font: bold;
 
 }
+
+
 
 .product-thumb{
     width: 110px;
