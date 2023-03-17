@@ -95,7 +95,7 @@ a{
 
 .product-container{
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     padding-left: 8px;
 

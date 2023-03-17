@@ -1,0 +1,26 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "A fake e-commerce website. Created using Javascript, HTML, and CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ber-nardTheo1/E-commerce-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ber-nardTheo1/E-commerce-Website/issues"
+  },
+  "homepage": "https://github.com/ber-nardTheo1/E-commerce-Website#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express.js": "^1.0.0",
+    "firebase-admin": "^11.5.0",
+    "nodemon": "^2.0.21"
+  }
+}

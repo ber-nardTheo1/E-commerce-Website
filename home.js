@@ -30,20 +30,19 @@ CreateNav()
 const Privacy = ` <p> Copyright © ${new Date().getFullYear()} Bernard Malunga </p>`
 document.getElementById("copyrights-el").innerHTML = Privacy
 
-const ProductContainers = [...document.querySelectorAll('.product-container')]
-const NextBtn = [...document.querySelector('#next-btn')]
-const PreBtn = [...document.querySelector('#pre-btn')]
+const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
 
-ProductContainers.forEach((item, i)=>{
-    let ContainerDimensions = item.getBoundingClientRect()
-    let ContainerWidth = ContainerDimensions.width
+productContainers.forEach((item, i) => {
+    let containerDimenstions = item.getBoundingClientRect();
+    let containerWidth = containerDimenstions.width;
 
-    NextBtn[i].addEventListiner('click', () =>{
-        item.scrollLeft += ContainerWidth
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
     })
 
-    PreBtn[i].addEventListiner('click', () =>{
-        item.scrollLeft -= ContainerWidth
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
     })
-}
-)
+})
