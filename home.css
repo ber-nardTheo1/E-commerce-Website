@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 30px 30px;
+}
+
+
+nav{
+    display: flex;
+    margin-left: 3px;
+}
+
+.brand-logo{
+    width:10%;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+
+}
+ul{
+    display: flex;
+   
+    
+
+}
+li{
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+.nav-link{
+    padding-left: 8px;
+    margin-top: 15px;
+    margin-bottom:15px;
+    font-size: medium;
+    align-content: center;
+
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#container{
+    display: flex;
+}
+
+.search-bar{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30%;
+    right: 10px;
+    display: flex;
+}
+
+.search-box{
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 3px;
+
+}
+
+.search-btn{
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 5px;
+    cursor: pointer;
+    width: 40%;
+}
+
+.cart-user{
+    display: flex;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.login-btn{
+    padding-left: 5px;
+}
+
+
+.headline-products{
+    margin-left: 23px;
+    font-style: oblique;
+    font-size: medium;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+
+
+.product-container{
+    display: flex;
+    
+    padding-left: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+}
+
+.product-discount{
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.content-column{
+    margin-top: 2%;
+}
+
+.actual-price{
+    padding-left: 5px;
+}
+
+.pre-btn, .nxt-btn{
+    border: none;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+    margin-top: -50px;
+   
+ 
+}
+
+.pre-btn{
+    left: 0;
+    transform: rotate(180deg);
+    padding-right: 5px;
+}
+
+.nxt-btn{
+    right: 0;
+    margin-left: 10px;
+}
+
+.pre-btn i, .nxt-btn i{
+    opacity: 0.2;
+}
+
+.pre-btn:hover img, .nxt-btn:hover img{
+    opacity: 1;
+}
+
+.name-el{
+    margin-top: 2%;
+    margin-left:5px;
+}
+
+.time-day{
+    margin-top: 2%;
+    text-align: center;
+    margin-left: 5px;
+    font-style: italic;
+    font: bold;
+
+}
+
+#time-el{
+ text-align: center;
+ font: bold;
+
+}
+
+.product-thumb{
+    width: 110px;
+    margin-top: 10px;
+    padding-left: 5px;
+    border: 2px solid white;
+    border-radius: 30px 30px;
+}
+
+.card-btn{
+    padding: 3px;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+
+
+
+.collection img{
+    width: 100%;
+    height: 100%;
+   
+    border: 2px solid white;
+    border-radius: 30px 30px;
+    object-fit: cover;
+}
+
+.collection{
+    position: relative;
+}
+
+.collection-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.collection p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+}
