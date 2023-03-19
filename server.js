@@ -5,7 +5,7 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const path = require('path')
 
-let staticpath = path.join(__dirname, "html")
+let staticpath = path.join(__dirname, "")
 
 const app = express()
 
