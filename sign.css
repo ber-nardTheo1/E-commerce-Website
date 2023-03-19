@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.logo-image{
+    width:10%;
+    margin:0 auto 50px;
+
+}
+
+
+
+body{
+    background-color: whitesmoke;
+    justify-items: center;
+    text-align: center;
+   
+}
+
+.section{
+    justify-content: center;
+    text-align: center;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 30px;
+    justify-content: center;
+    margin-left:38.5%;
+   
+}
+
+.sign-container{
+    justify-items: center;
+    text-align: center;
+
+}
+
+input[type="number"]{
+    border-radius: 30px;
+    border: 2px solid black;
+    width: 300px;
+    padding: 5px;
+    margin-top: 5px;
+    
+}
+
+label{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-left: 2px;
+    margin-top: 5px;
+}
+
+input[type="checkbox"],
+textarea{
+    padding-left: 2px;
+}
+
+.submit-btn{
+    border-radius: 30px;
+    border: 2px solid black;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    margin-top: 10px;
+}
+
+
