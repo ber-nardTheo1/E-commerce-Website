@@ -19,8 +19,28 @@ app.get("/", (req, res) =>{
     res.sendFile(path.join(staticpath, "home.html"))
 })
 
-app.get("/", (req, res) =>{
-    res.sendFile(path.join(staticpath, "sign.html"))
+app.use(express.json())
+app.post("/", (req, res) =>{
+    let {FirstName, LastName, email, passWord, termsAndconditions} = req.body
+
+    if(FirstName===""){
+        return res.json({'alert':'Fill your first name'})
+    }
+
+    else if(LastName===""){
+        return res.json({'alert':'Fill your last name'})
+    }
+
+    else if(email===""){
+        return res.json({'alert':'fill your email address'})
+    }
+
+    else if(passWord.length < 8){
+        return res.json({'alert':'Password should have more than 8 characters'})
+    }
+    else if(!termsAndconditions){
+        return res.json({'alert':'check terms and conditions'})
+    }
 })
 
 app.get("/", (req, res) =>{
