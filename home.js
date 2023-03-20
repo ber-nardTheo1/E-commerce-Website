@@ -5,7 +5,7 @@ const CreateNav = () =>{
         <div id="container" class="container">
             <div class="nav navbar">
                 <ul>
-                    <li class="nav-link" ><a id="home-el" href="">Home</a></li>
+                    <li class="nav-link" ><a id="home-el" href="home.html">Home</a></li>
                     <li  class="nav-link" ><a id="men-el" href="">Men</a></li>
                     <li  class="nav-link" ><a id="women-el" href="">Women</a></li>
                     <li  class="nav-link" ><a id="kids-el" href="">Kids</a></li>
@@ -18,8 +18,8 @@ const CreateNav = () =>{
             </div>
             <div class="cart-user">
                 <a id="cart" class="cart-btn" href="">Cart</a>
-                <a id="login" class="login-btn" href="">Login</a>
-                <a id="signin" class="login-btn" href="">Register</a>
+                <a id="login" class="login-btn" href="login.html">Login</a>
+                <a id="signin" class="login-btn" href="sign.html">Register</a>
 
             </div>
         </div>`
