@@ -47,17 +47,6 @@ const SendData = (path, data)=>{
         processData(response)
     })
 
-    // submit form
-    loader.style.display = 'block';
-    SendData('/signup', {
-        FirstName: FirstName.value,
-        LastName: LastName,
-        email: email.value,
-        passWord: passWord.value,
-        termsAndconditions: termsAndconditions.checked,
-        seller: false
-    })
-
   
 
 }
