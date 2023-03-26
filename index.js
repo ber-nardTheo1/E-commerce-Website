@@ -1,9 +1,19 @@
+// redirect to home page if user logged in 
+window.onload = () =>{
+    if(sessionStorage.user){
+        user = JSON.parse(sessionStorage.user)
+        if(compareToken(user.authToken, user.email)){
+            location.replace('/')
+        }
+}
+}
+
 const loader= document.querySelector('.loader')
 
 const FirstName = document.querySelector('#firstname')
 const LastName = document.querySelector('#lastname')
 const email = document.querySelector('#email')
-const passWord = document.querySelector('#password')
+const password = document.querySelector('#password')
 const subMitBtn = document.querySelector('.submit-btn')
 const termsAndconditions = document.querySelector('#terms-and-conds')
 const Notification = document.querySelector('#notification')
@@ -18,15 +28,12 @@ subMitBtn.addEventListener('click', ()=>{
     else if(email.value===""){
         showAlert("enter your email")
     }
-
-    else if(passWord.value===""){
+    else if(password.value===""){
         showAlert("Enter password")
     }
-
-    else if(passWord.value.lenghth < 7){
+    else if(password.value.lenghth < 7){
         showAlert("Password should have more than 8 characters")
     }
-
     else if(!termsAndconditions.checked){
         showAlert("Check terms and Conditions")
     }
@@ -37,7 +44,7 @@ subMitBtn.addEventListener('click', ()=>{
             FirstName: FirstName.value,
             LastName: LastName.value,
             email: email.value,
-            passWord: passWord.value,
+            password: password.value,
             Notification: Notification.checked,
             termsAndconditions: termsAndconditions.checked,
             seller: false
@@ -59,7 +66,7 @@ const showAlert = (msg) =>{
 
 const SendData = (path, data)=>{
     fetch(path, {
-        method: "post",
+        method: 'post',
         headers: new Headers({'content-Type': 'application/json'}),
         body: JSON.stringify(data)
     }).then((res) => res.json())
@@ -76,6 +83,14 @@ const processData =(data) =>{
     if (data.alert){
         showAlert(data.alert)
     }
+    else if(data.FirstName && data.LastName){
+        //create an authtoken
+        data.authToken = generateToken(data.email)
+        sessionStorage.user = JSON.stringify(data)
+        location.replace('/')
+    }
+    
+
 
 }
 

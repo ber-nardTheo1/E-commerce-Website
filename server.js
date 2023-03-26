@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 const path = require('path')
 
 // firebasecode admin setup 
-var serviceAccount = require("e-commerce-3218e-firebase-adminsdk-swwyo-001108572c.json");
+var serviceAccount = require("C:/Users/theom/OneDrive/Desktop/E-commerce/e-commerce-3218e-firebase-adminsdk-swwyo-001108572c.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
@@ -29,7 +29,7 @@ app.get("/", (req, res) =>{
 
 
 app.post("/sign", (req, res) =>{
-   let {FirstName,  LastName,    email,  passWord, Notification,  termsAndconditions}= req.body
+   let {FirstName,  LastName,    email,  password, Notification,  termsAndconditions}= req.body
    if(FirstName===""){
     return res.json({"alert":"Fill your name"})
    }
@@ -39,10 +39,10 @@ app.post("/sign", (req, res) =>{
    else if(email===""){
     return res.json({"alert":"Fill your email"})
    }
-   else if(passWord===""){
+   else if(password===""){
     return res.json({"alert":"Password should not be empty"})
    }
-   else if(passWord.length < 8){
+   else if(password.length < 8){
     return res.json({"alert":"Password should have more than 8 characters"})
    }
    else if(!termsAndconditions){
@@ -50,22 +50,22 @@ app.post("/sign", (req, res) =>{
    }
 
    // store data in db
-   db.collection('Users').doc(email).get()
+   db.collection('users').doc(email).get()
    .then(user =>{
     if(user.exists){
         return res.json({"alert":"email already exists"})
     } else{
         // encrypt password
-        bcrypt.genSalt(10, (err, salt) =>{
-            bcrypt.hash(passWord, salt, (err, hash)=>{
-                res.body.passWord = hash
-                db.collection('Users').doc(email).set(req.body)
-                .then(data =>{
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(password, salt, (err, hash) => {
+                req.body.password = hash;
+                db.collection('users').doc(email).set(req.body)
+                .then(data => {
                     res.json({
-                        FirstName:res.body.FirstName,
-                        LastName:res.body.LastName,
-                        email:res.body.email,
-                        seller:res.body.seller
+                        FirstName: req.body.FirstName,
+                        LastName: req.body.LastName,
+                        email: req.body.email,
+                        seller: req.body.seller,
                     })
                 })
             })
@@ -73,7 +73,6 @@ app.post("/sign", (req, res) =>{
     }
 
    })
-    res.json('data received')
    
 })
 
