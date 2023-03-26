@@ -1,19 +1,26 @@
+const loader= document.querySelector('.loader')
+
 const FirstName = document.querySelector('#firstname')
 const LastName = document.querySelector('#lastname')
 const email = document.querySelector('#email')
 const passWord = document.querySelector('#password')
 const subMitBtn = document.querySelector('.submit-btn')
 const termsAndconditions = document.querySelector('#terms-and-conds')
+const Notification = document.querySelector('#notification')
 
 subMitBtn.addEventListener('click', ()=>{
-    if(FirstName===""){
+    if(FirstName.value===""){
         showAlert("Fill your first name")
     }
-    else if(LastName===""){
+    else if(LastName.value===""){
         showAlert("Fill your last name")
     }
-    else if(email===""){
+    else if(email.value===""){
         showAlert("enter your email")
+    }
+
+    else if(passWord.value===""){
+        showAlert("Enter password")
     }
 
     else if(passWord.value.lenghth < 7){
@@ -22,6 +29,19 @@ subMitBtn.addEventListener('click', ()=>{
 
     else if(!termsAndconditions.checked){
         showAlert("Check terms and Conditions")
+    }
+    else{
+        loader.style.display="block"
+        // submit form
+        SendData('/sign', {
+            FirstName: FirstName.value,
+            LastName: LastName.value,
+            email: email.value,
+            passWord: passWord.value,
+            Notification: Notification.checked,
+            termsAndconditions: termsAndconditions.checked,
+            seller: false
+        })
     }
 })
 
@@ -51,6 +71,13 @@ const SendData = (path, data)=>{
 
 }
 
+const processData =(data) =>{
+    loader.style.display=null
+    if (data.alert){
+        showAlert(data.alert)
+    }
+
+}
 
     
 

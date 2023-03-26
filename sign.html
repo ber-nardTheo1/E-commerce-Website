@@ -12,9 +12,11 @@
         <div>
             <img class="logo-image" src="images/clothing-brand.png" />
         <div class="sign-container">
-            <div class="alert-box">
+            <div class="alert-box show">
+                <img class="cancel-img" src="icons/cancel.png"/>
                 <p class="alert-msg">Error Message</p>
             </div>
+                <img class="loader" src="images/loading.gif"/>
             <div>
                 <input type="text" autocomplete="off" id="firstname" placeholder="first name">
                 <input type="text" autocomplete="off" id="lastname" placeholder="last name">
@@ -27,7 +29,7 @@
             </div>
             <div>
                 <input type="checkbox" checked class="checkbox" id="notification">
-                <label for="notification" > Receive upcoming offers and events mails.</label>
+                <label for="notification" id="notification"> Receive upcoming offers and events mails.</label>
             </div>
             <div>
                 <button class="submit-btn">Create Account</button>
@@ -35,6 +37,8 @@
             <p><a href="login.html"> Already have an account? Login Here</a></p>
         </div>
         </div> 
-    </section>    
+    </section>  
+    <script src="index.js"></script>
+
 </body>
 </html>
