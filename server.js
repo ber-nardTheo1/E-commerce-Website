@@ -76,7 +76,7 @@ app.post("/sign", (req, res) =>{
    
 })
 
-app.get("/", (req, res) =>{
+app.get("/login", (req, res) =>{
     res.sendFile(path.join(staticpath, "login.html"))
 })
 app.get("/sign", (req, res)=>{

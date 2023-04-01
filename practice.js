@@ -92,3 +92,27 @@ console.log(FirstAnimal.getName())
 FirstAnimal.setName("Hyena")
 console.log(FirstAnimal.getName())
 
+
+var total = 0
+const numbers = () =>{
+  
+  for(i = 0; i<=100; i++){
+    console.log(i)
+    total = total + i
+
+  }
+ 
+  return total
+}
+
+numbers()
+
+var fruits = ["mangoes", "bananas", "pineapple", "apple"]
+
+const fruitsLists= ()=>{
+  for( i = 0; i<fruits.length; i+=1 ){
+    console.log(fruits[i])
+  }
+}
+
+fruitsLists()
