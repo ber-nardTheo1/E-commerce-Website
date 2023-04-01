@@ -56,7 +56,16 @@ subMitBtn.addEventListener('click', ()=>{
         // logine page 
         if(email.value || password.value===""){
             showAlert("Fill your user name or password")
-        } 
+        } else {
+            loader.style.display="block"
+            // submit form
+            SendData('/login', {
+                email: email.value,
+                password: password.value,
+            })
+            
+
+        }
     }
     
 })
