@@ -10,46 +10,55 @@ window.onload = () =>{
 
 const loader= document.querySelector('.loader')
 
-const FirstName = document.querySelector('#firstname')
-const LastName = document.querySelector('#lastname')
+const FirstName = document.querySelector('#firstname') || null
+const LastName = document.querySelector('#lastname') || null
 const email = document.querySelector('#email')
 const password = document.querySelector('#password')
 const subMitBtn = document.querySelector('.submit-btn')
-const termsAndconditions = document.querySelector('#terms-and-conds')
-const Notification = document.querySelector('#notification')
+const termsAndconditions = document.querySelector('#terms-and-conds') || null
+const Notification = document.querySelector('#notification') || null
 
 subMitBtn.addEventListener('click', ()=>{
-    if(FirstName.value===""){
-        showAlert("Fill your first name")
+    if(FirstName && LastName != null){
+        if(FirstName.value===""){
+            showAlert("Fill your first name")
+        }
+        else if(LastName.value===""){
+            showAlert("Fill your last name")
+        }
+        else if(email.value===""){
+            showAlert("enter your email")
+        }
+        else if(password.value===""){
+            showAlert("Enter password")
+        }
+        else if(password.value.lenghth < 7){
+            showAlert("Password should have more than 8 characters")
+        }
+        else if(!termsAndconditions.checked){
+            showAlert("Check terms and Conditions")
+        }
+        else{
+            loader.style.display="block"
+            // submit form
+            SendData('/sign', {
+                FirstName: FirstName.value,
+                LastName: LastName.value,
+                email: email.value,
+                password: password.value,
+                Notification: Notification.checked,
+                termsAndconditions: termsAndconditions.checked,
+                seller: false
+            })
+        }
+
+    } else {
+        // logine page 
+        if(email.value || password.value===""){
+            showAlert("Fill your user name or password")
+        } 
     }
-    else if(LastName.value===""){
-        showAlert("Fill your last name")
-    }
-    else if(email.value===""){
-        showAlert("enter your email")
-    }
-    else if(password.value===""){
-        showAlert("Enter password")
-    }
-    else if(password.value.lenghth < 7){
-        showAlert("Password should have more than 8 characters")
-    }
-    else if(!termsAndconditions.checked){
-        showAlert("Check terms and Conditions")
-    }
-    else{
-        loader.style.display="block"
-        // submit form
-        SendData('/sign', {
-            FirstName: FirstName.value,
-            LastName: LastName.value,
-            email: email.value,
-            password: password.value,
-            Notification: Notification.checked,
-            termsAndconditions: termsAndconditions.checked,
-            seller: false
-        })
-    }
+    
 })
 
 const showAlert = (msg) =>{
