@@ -27,6 +27,10 @@ app.get("/", (req, res) =>{
     res.sendFile(path.join(staticpath, "home.html"))
 })
 
+app.get("/sign", (req, res)=>{
+    res.sendFile(path.join(staticpath, "sign.html"))
+})
+
 
 app.post("/sign", (req, res) =>{
    let {FirstName,  LastName,    email,  password, Notification,  termsAndconditions}= req.body
@@ -79,7 +83,32 @@ app.post("/sign", (req, res) =>{
 app.get("/login", (req, res) =>{
     res.sendFile(path.join(staticpath, "login.html"))
 })
-app.get("/sign", (req, res)=>{
-    res.sendFile(path.join(staticpath, "sign.html"))
-})
 
+app.post("/login", (req, res)=>{
+    let {email, password} = res.body
+    if(!email || !password){
+        return res.json({"alert":"Fill all your inputs"})
+    }
+
+    db.collection('users').doc('email').get()
+    .then(user =>{
+        if(!user.exists){
+            return res.json({"alert":"Log in email does not exists"})
+        } else{
+            bcrypt.compare(password, user.data().password, (err, result) =>{
+                if(result){
+                    let data = user.data()
+                    return res.json({
+                        FirstName:data.FirstName,
+                        LastName:data.LastName,
+                        email:data.email,
+                        seller:data.seller,
+
+                    })
+                } else{
+                    return res.json({"alert":"password is incorrect"})
+                }
+            })
+        }
+    })
+})
