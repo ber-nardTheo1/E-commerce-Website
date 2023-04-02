@@ -3,26 +3,29 @@ const CreateNav = () =>{
 
     Nav.innerHTML=`
         <div id="container" class="container">
-            <div class="nav navbar">
+            <div class="nav navbar-types">
                 <ul>
                     <li class="nav-link" ><a id="home-el" href="home.html">Home</a></li>
                     <li  class="nav-link" ><a id="men-el" href="">Men</a></li>
                     <li  class="nav-link" ><a id="women-el" href="">Women</a></li>
                     <li  class="nav-link" ><a id="kids-el" href="">Kids</a></li>
                     <li  class="nav-link" ><a id="accessories-el" href="">Accensories</a></li>
-                </ul> 
+                 </ul> 
             </div>
             <div class="search-bar">
                 <input type="text" class="search-box" placeholder="search brand, product">
                 <button class="search-btn">search</button>
             </div>
             <div class="cart-user">
-                <a id="cart" class="cart-btn" href="">Cart</a>
-                <a id="login" class="login-btn" href="login.html">Login</a>
-                <a id="signin" class="login-btn" href="sign.html">Register</a>
-
+                <li><a id="cart" class="cart-btn" href=""><img class="shopping-cart"src="icons/shopping-cart.png"/></a></li>
+            </div>
+            <div class="login-logout-popup">
+                <li><a id="login" class="login-btn" href="login.html"><img class="user-login"src="icons/user.png"/></a></li>
+                <li><a id="logout" class="logout-btn" href="">Logout</a></li>
+                <li><a id="signin" class="sign-btn" href="sign.html">Register</a></li>
             </div>
         </div>`
+        
 }
 
 CreateNav()
@@ -46,3 +49,5 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+window.onload()

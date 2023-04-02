@@ -16,6 +16,7 @@ nav{
     margin-left: 3px;
 }
 
+
 .brand-logo{
     width:10%;
     margin-left: 10%;
@@ -50,9 +51,6 @@ a{
     text-decoration: none;
 }
 
-#container{
-    display: flex;
-}
 
 .search-bar{
     margin-top: 15px;
@@ -79,13 +77,32 @@ a{
 
 .cart-user{
     display: flex;
-    padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 15px;
 }
 
-.login-btn{
-    padding-left: 5px;
+.shopping-cart{
+    width: 15%;
+
+}
+
+.login-logout-popup{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+}
+
+.user-login{
+    width: 30%;
+}
+
+.logout-btn{
+    padding-left:5px;
+}
+
+.sign-btn{
+    padding-left:5px;
 }
 
 

@@ -1,4 +1,4 @@
-
+// importing packages
 const admin = require('firebase-admin')
 const express = require('express')
 const bcrypt = require('bcrypt')
@@ -84,8 +84,9 @@ app.get("/login", (req, res) =>{
     res.sendFile(path.join(staticpath, "login.html"))
 })
 
+app.use(express.json())
 app.post("/login", (req, res)=>{
-    let {email, password} = res.body
+    let {email, password} = req.body
     if(email && password===""){
         return res.json({"alert":"Fill all your inputs"})
     }
