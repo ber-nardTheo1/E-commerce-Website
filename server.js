@@ -35,7 +35,7 @@ app.get("/sign", (req, res)=>{
 app.post("/sign", (req, res) =>{
    let {FirstName,  LastName,    email,  password, Notification,  termsAndconditions}= req.body
    if(FirstName===""){
-    return res.json({"alert":"Fill your name"})
+    return res.json({"alert":"Fill your first name"})
    }
    else if(LastName===""){
     return res.json({"alert":"Fill your last name"})
@@ -86,11 +86,11 @@ app.get("/login", (req, res) =>{
 
 app.post("/login", (req, res)=>{
     let {email, password} = res.body
-    if(!email || !password){
+    if(email && password===""){
         return res.json({"alert":"Fill all your inputs"})
     }
 
-    db.collection('users').doc('email').get()
+    db.collection('users').doc(email).get()
     .then(user =>{
         if(!user.exists){
             return res.json({"alert":"Log in email does not exists"})
@@ -103,7 +103,6 @@ app.post("/login", (req, res)=>{
                         LastName:data.LastName,
                         email:data.email,
                         seller:data.seller,
-
                     })
                 } else{
                     return res.json({"alert":"password is incorrect"})
