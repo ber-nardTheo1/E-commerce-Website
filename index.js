@@ -54,7 +54,7 @@ subMitBtn.addEventListener('click', ()=>{
 
     } else {
         // login page 
-        if(email && password ===""){
+        if(email.value && password.value ===""){
             showAlert("fill the inputs")
         } else {
             loader.style.display="block"
