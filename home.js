@@ -16,13 +16,15 @@ const CreateNav = () =>{
                 <input type="text" class="search-box" placeholder="search brand, product">
                 <button class="search-btn">search</button>
             </div>
-            <div class="cart-user">
-                <li><a id="cart" class="cart-btn" href=""><img class="shopping-cart"src="icons/shopping-cart.png"/></a></li>
-            </div>
-            <div class="login-logout-popup">
-                <li><a id="login" class="login-btn" href="login.html"><img class="user-login"src="icons/user.png"/></a></li>
-                <li><a id="logout" class="logout-btn" href="">Logout</a></li>
-                <li><a id="signin" class="sign-btn" href="sign.html">Register</a></li>
+                <div class="cart-user">
+                    <li><a id="cart" class="cart-btn" href=""><img  class="shopping-cart"src="icons/shopping-cart.png"/></a></li>
+                </div>
+            <div class="login-logout-nav">
+                <li><img id="user-img" class="user-login"src="icons/user.png"/></li>
+                <div class="login-logout-popup hide">
+                    <p class="account-info">Log in as, name</p>
+                    <button class="btn" id="user-btn"><a id="logout" class="logout-btn" href="">Logout</a></button>
+                </div>
             </div>
         </div>`
         
@@ -50,4 +52,30 @@ productContainers.forEach((item, i) => {
     })
 })
 
-window.onload()
+// nav popup
+
+const userImageButton = document.querySelector("#user-img")
+const userPopUp = document.querySelector(".login-logout-popup")
+const popText = document.querySelector(".account-info")
+const actionBtn = document.querySelector("#user-btn")
+
+userImageButton.addEventListener("click", ()=>{
+    userPopUp.classList.toggle("hide")
+})
+
+window.onload = () =>{
+    let user = JSON.parse(sessionStorage.user || null)
+    if(user != null){
+        // means user is logged in 
+        popText.innerHTML = `log in as, ${user.FirstName} ${user.LastName}`
+        actionBtn.innerHTML = `logout`
+        actionBtn.addEventListener("click", ()=>{
+            sessionStorage.clear()
+            location.reload()
+        })
+
+    } else{
+        // user logged out
+
+    }
+}
