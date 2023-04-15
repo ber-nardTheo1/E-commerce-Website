@@ -27,6 +27,10 @@ app.get("/", (req, res) =>{
     res.sendFile(path.join(staticpath, "home.html"))
 })
 
+app.get("/seller", (req, res) =>{
+    res.sendFile(path.join(staticpath, "seller.html"))
+})
+
 app.get("/sign", (req, res)=>{
     res.sendFile(path.join(staticpath, "sign.html"))
 })
@@ -111,4 +115,37 @@ app.post("/login", (req, res)=>{
             })
         }
     })
+})
+
+app.get("/seller", (req, res) =>{
+    res.sendFile(path.join(staticpath, "seller.html"))
+})
+
+
+app.post("/seller", (req, res)=>{
+    let{ businessName, businessAddress, Description, phoneNumber, termsAndconditions, legitInformation, email} = req.body
+    if(businessName.ariaValueText===""){
+        return res.json({"alert":"Insert your business name"})
+    } else if(businessAddress.value===""){
+        return res.json({"alert":"Insert your address"})
+    } else if(Description.value===""){
+        return res.json({"alert":"Fill the description of your product"})
+    } else if(phoneNumber.value){
+        return res.json({"alert":"Invalid phone number"})
+    } else if(!termsAndconditions){
+        return res.json({"alert":"check terms and conditions"})
+    } else if(!legitInformation){
+        return res.json({"alert":"Check the information button"})
+    } else{
+        db.collection("sellers").doc(email).set(req.body)
+        .then(data =>{
+            db.collection("users").doc(email).update({
+                seller:true
+            }) .then(data =>{
+                res.json(true)
+            })
+
+        })
+    }
+
 })

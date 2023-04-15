@@ -56,7 +56,6 @@ const SendData = (path, data)=>{
 }
 
 const processData =(data) =>{
-    loader.style.display=null
     if (data.alert){
         showAlert(data.alert)
     }
@@ -65,6 +64,12 @@ const processData =(data) =>{
         data.authToken = generateToken(data.email)
         sessionStorage.user = JSON.stringify(data)
         location.replace('/')
+    } else if( data == true){
+        // seller page
+        let user = JSON.parse(sessionStorage.user)
+        user.seller = true 
+        sessionStorage.user = JSON.stringify(user)
+        location.reload()
     }
     
 

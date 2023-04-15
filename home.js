@@ -71,7 +71,8 @@ window.onload = () =>{
         actionBtn.innerHTML = `logout`
         actionBtn.addEventListener("click", ()=>{
             sessionStorage.clear()
-            location.reload()
+            location.replace("/login")
+            
         })
 
     } else{

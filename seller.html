@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sellers Dashboard</title>
+    <link rel="stylesheet" href="seller.css"/>
+</head>
+<body>
+        <img class="logo-image" src="images/clothing-brand.png" />
+    <!--become a seller element-->
+    <div class="become-seller">
+        <p class="heading">Become a Seller</p>
+        <p class="description"> Become a seller and grow your business with us</p>
+        <button class="btn" id="apply-btn">Apply for a seller account</button>
+    </div>
+
+    <!-- application form-->
+    <div class="apply-form hide">
+        <div class="alert-box show">
+            <img class="cancel-img"/>
+            <p class="alert-msg">Error Message</p>
+        </div>
+        <div>
+            <input type="text" id="business-name" placeholder="Business Name">
+        </div>
+        <div>
+            <textarea id="business-add" placeholder=" Address"></textarea>
+        </div>
+        <div>
+            <textarea id="business-des" placeholder=" Business description"></textarea>
+        </div>
+        <div>
+            <input type="tel" id="phone-number" placeholder="090-0000-000">
+        </div>
+        <div>
+            <input type="checkbox" checked class="checkbox" id="terms-and-conds">
+            <label for="terms-and-conds"> Agree to our <a href="">terms and conditions</a><label>
+        </div>
+        <div>
+            <input type="checkbox" checked class="checkbox" id="legit-info">
+            <label for="legiti-infor"> All information is legit</label>
+        </div>
+        <button class="btn" id="apply-form-btn">Apply for a seller account</button>
+    </div>
+    <!--product list-->
+    <div class="product-listing">
+        <div class="add-product">
+            <p class="add-product-title">add product</p>
+            <button class="btn"> Add Product</button>
+        </div>
+        <img class="no-product" src="images/no-product.png"/>
+    </div>
+    <script src="token.js"></script>
+    <script src="seller.js"></script>
+    
+</body>
+</html>
