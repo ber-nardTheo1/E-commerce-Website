@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="add-product.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+</head>
+<body>
+    <img class="logo-image" src="images/clothing-brand.png" />
+    <div class="alert-box show">
+        <img class="cancel-img"/>
+        <p class="alert-msg">error</p>
+    </div>
+
+    <div class="form">
+        <div>
+            <input type="text" id="product-name" maxlenght="50" placeholder="product name">
+    
+        <div>
+            <input type="text" id="short-description" maxlenght="100" placeholder="short description">
+        </div>
+        <div>
+            <textarea id="full-description" placeholder="detail description"></textarea>
+        </div>
+        <!--product-images-->
+        <div class="product-information" id="product-information">
+            <div class="product-image"><p class="text">product images</p></div>
+            <div class="upload-image-sec">
+               <p class="image-text"><img class="image-upload" src="images/camera.jpg">Upload image</p>
+               <div class="upload-cataloug">
+                    <input type="file" class="file-upload" id="first-file-upload-btn" hidden>
+                    <label for="first-file-upload-btn" class="upload-image"></label>
+                    <input type="file" class="file-upload" id="second-file-upload-btn" hidden>
+                    <label for="second-file-upload-btn" class="upload-image"></label>
+                    <input type="file" class="file-upload" id="third-file-upload-btn" hidden>
+                    <label for="third-file-upload-btn" class="upload-image"></label>
+                    <input type="file" class="file-upload" id="fourth-file-upload-btn" hidden>
+                    <label for="fourth-file-upload-btn" class="upload-image"></label>
+               </div>
+            </div>
+            <div class="select-sizes">
+                <p class="text">Avaliable sizes</p>
+                <div class="sizes">
+                    <div>
+                        <input type="checkbox" class="size-checkbox" id="xs" value="XS">
+                    </div>
+                    <div>
+                        <input type="checkbox" class="size-checkbox" id="s" value="S">
+                    </div>
+                    <div>
+                        <input type="checkbox" class="size-checkbox" id="m" value="M">
+                    </div>
+                    <div>
+                        <input type="checkbox" class="size-checkbox" id="l" value="L">
+                    </div>
+                    <div>
+                        <input type="checkbox" class="size-checkbox" id="xl" value="XL">
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="product-price">
+            <input type="number" id="actual-price" placeholder="actual price">
+            <input type="number" id="discount" placeholder="discout percentage">
+            <input type="number" id="sell-price" placeholder="sell price">
+        </div>
+        <input type="number" id="stock" min="20" placeholder="items in stock(minimum 20)">
+        <textarea id="tags" placeholder="Enter categories, for example; men, blue jeans or women"></textarea>
+
+       
+    </div>
+    
+</body>
+<script src="token.js"></script>
+<script src="seller.js"></script>
+
+</html>

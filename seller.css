@@ -22,6 +22,11 @@ body{
     margin-left: 40%;
 }
 
+.alert-msg{
+    color: red;
+    margin-left: 20px;
+}
+
 .become-seller{
     border-radius: 30px;
     background: white;
