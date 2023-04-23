@@ -59,7 +59,7 @@ subMitBtn.addEventListener('click', ()=>{
         } else {
             loader.style.display="block"
             // submit form
-            SendData('/login', {
+            sendData('/login', {
                 email: email.value,
                 password: password.value,
                 
