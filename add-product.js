@@ -1,13 +1,13 @@
-//let user = JSON.parse(sessionStorage.user || null)
+let user = JSON.parse(sessionStorage.user || null)
 
-// checking user is logged in or not 
+ //checking user is logged in or not 
 
-//window.onload =() =>{
-   // if(user){
-      //  if(!compareToken(user.authToken, user.email)){
-        //    location.replace("/login")
-      //  } 
-   // } else{
-      //  location.replace("/login")
-    //}
-//}
+window.onload =() =>{
+    if(user){
+        if(!compareToken(user.authToken, user.email)){
+            location.replace("/login")
+        } 
+    } else{
+        location.replace("/login")
+    }
+}
