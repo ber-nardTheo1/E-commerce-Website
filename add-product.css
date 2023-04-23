@@ -173,3 +173,23 @@ input::-webkit-outer-spin-button,
 .product-price input{
     margin: 0;
 }
+
+.buttons{
+    margin: 20px 0 50px;
+}
+
+.btn{
+    padding: 10px 30px;
+    text-transform: capitalize;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#save-btn{
+    background: black;
+}
