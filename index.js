@@ -41,7 +41,7 @@ subMitBtn.addEventListener('click', ()=>{
         else{
             loader.style.display="block"
             // submit form
-            SendData('/sign', {
+            sendData('/sign', {
                 FirstName: FirstName.value,
                 LastName: LastName.value,
                 email: email.value,
